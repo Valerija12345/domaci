@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    </head>
+    <style>
+        body{
+            background-image: url(https://st4.depositphotos.com/10376142/20109/v/1600/depositphotos_201093816-stock-illustration-calculator-icon-seamless-pattern-on.jpg);
+        }
+        table,tr {
+            border: 5px solid seagreen;
+        }
+        input{
+            height: 40px;
+            width: 200px;    
+        }
+        #kalkulatorid{
+                position: relative;
+                top: 200px;
+                left: 500px;
+        }
+    </style>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">VALERIJA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Pocetna <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="st1.html">Kalkulator</a>
+                <a class="nav-item nav-link" href="st2.html">Konvertuj</a>
+                <a class="nav-item nav-link" href="st3.html">Igrica</a>
+                <a class="nav-item nav-link" href="kontejneri.html">O nama</a>
+                <a class="nav-item nav-link" href="funkcije.html">funkcije</a>
+              </div>
+            </div>
+          </nav>
+          <div id="kalkulatorid" >
+            <input type="number" name="broj1" id="broj1"><br>
+            <input type="number" name="broj2" id="broj2"><br>
+            <button onclick="zbir()" class="btn btn-success">+</button>
+            <button onclick="razlika()" class="btn btn-success">-</button>
+            <button onclick="mnozenje()" class="btn btn-success">*</button>
+            <button onclick="deljenje()" class="btn btn-success">/</button><br>
+            <button onclick="log()" class="btn btn-success">log10</button><br>
+            <input type="text" name="rez" id="rez"><br>
+          </div>
+          <script>
+
+            function zbir(){
+              var b1=Number(document.getElementById('broj1').value);
+              var b2=Number(document.getElementById('broj2').value);
+              var rez=b1+b2;
+              document.getElementById('rez').value=rez;
+            }
+            function razlika(){
+              var b1=Number(document.getElementById('broj1').value);
+              var b2=Number(document.getElementById('broj2').value);
+              var rez=b1-b2;
+              document.getElementById('rez').value=rez;
+            }
+            function mnozenje(){
+              var b1=Number(document.getElementById('broj1').value);
+              var b2=Number(document.getElementById('broj2').value);
+              var rez=b1*b2;
+              document.getElementById('rez').value=rez
+            }
+            function deljenje(){
+              var b1=Number(document.getElementById('broj1').value);
+              var b2=Number(document.getElementById('broj2').value);
+              if (b2==0) {
+                window.alert('ne smete da delite sa nulom');
+                document.getElementById('broj2').focus();
+              } 
+              else {
+              var rez=b1/b2;
+              document.getElementById('rez').value=rez.toFixed(2);
+              }
+      
+            }
+            function log(){
+              var b1=Number(document.getElementById('broj1').value);
+              var b2=Number(document.getElementById('broj2').value);
+              var rez=Math.log10(b1);
+              document.getElementById('rez').value=rez.toFixed(2);
+            }
+          </script>
+
+    </body>
+</html>
